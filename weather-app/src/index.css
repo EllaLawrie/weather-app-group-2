@@ -22,11 +22,9 @@ body {
 }
 
 .weather-container {
-  position: absolute;
   width: 400px;
-  height: 650px;
-  top: 50%;
-  left: 50%;
+  height: auto;
+
   border-style: none;
   border: 10px solid #294757;
   background-color: #294757;
@@ -86,4 +84,21 @@ hr {
 .location {
   font-size: 2.3rem;
   letter-spacing: 1.5px;
+}
+
+img {
+  width: 100%;
+}
+
+.sub-weather-info {
+  font-size: 0.5rem;
+}
+
+.info-section {
+  display: flex;
+  align-items: center;
+}
+
+.icon-small {
+  width: 30px;
 }

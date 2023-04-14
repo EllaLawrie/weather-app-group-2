@@ -95,35 +95,114 @@ function App() {
   return (
     <div>
       {weatherData && (
-        <div className='weather-container'>
-          <div className='weather-content'>
-            <div className='cloudy'>
-              <p>{weatherData.text}</p>
-            </div>
-            <div className='degree'>
-              <p>{weatherData.temp_c}°</p>
-            </div>
-            <div className='icon'>
-              <img src={weatherData?.icon} alt='Weather Icon' />
-            </div>
-            <div className='cal-ation'>
-              <div className='location'>
-                <p>
-                  <img src={mapIcon} height='30px' />
-                  &nbsp;{weatherData.name}, {weatherData.region}
-                </p>
+        <>
+          <div className='weather-container'>
+            <div className='weather-content'>
+              <div className='cloudy'>
+                <p>{weatherData.text}</p>
               </div>
+              <div className='degree'>
+                <p>{weatherData.temp_c}°</p>
+              </div>
+              <div className='icon'>
+                <img src={weatherData?.icon} alt='Weather Icon' />
+              </div>
+              <div className='cal-ation'>
+                <div className='location'>
+                  <p>
+                    <img src={mapIcon} height='30px' />
+                    &nbsp;{weatherData.name}, {weatherData.region}
+                  </p>
+                </div>
 
-              <hr />
+                <hr />
 
-              <div className='calendar'>
-                <p>
-                  {getDayDateMonth(weatherData && weatherData.last_updated)}
-                </p>
+                <div className='calendar'>
+                  <p>
+                    {getDayDateMonth(weatherData && weatherData.last_updated)}
+                  </p>
+                </div>
+                <div className='sub-weather-info'>
+                  <section>
+                    <section className='info-section'>
+                      <div className='icon-small'>
+                        <img src='https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/wind.svg' />
+                      </div>
+                      Wind:
+                      <span>
+                        {weatherData.wind_kph}km/h {weatherData.wind_dir}
+                      </span>
+                    </section>
+                    <section className='info-section'>
+                      <div className='icon-small'>
+                        <img src='https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/humidity.svg' />
+                      </div>
+                      Humidity: <span>{weatherData.humidity} %</span>
+                    </section>
+                    <section className='info-section'>
+                      <div className='icon-small'>
+                        <img src='https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/rain.svg' />
+                      </div>
+                      Rainfall: <span>{weatherData.precip_mm} mm</span>
+                    </section>
+                    <section className='info-section'>
+                      <div className='icon-small'>
+                        <img src='https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/uv-index.svg' />
+                      </div>
+                      UV index: <span>{weatherData.uv}</span>
+                    </section>
+                    <section className='info-section'>
+                      <div className='icon-small'>
+                        <img src='https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/pressure-high.svg' />
+                      </div>
+                      Pressure:
+                      <span>{weatherData.pressure_mb} mb</span>
+                    </section>
+                  </section>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+          <div className='sub-weather-info'>
+            <section>
+              <section className='info-section'>
+                <div className='icon-small'>
+                  <img src='https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/wind.svg' />
+                </div>
+                Wind:
+                <span>
+                  {weatherData.wind_kph}km/h {weatherData.wind_dir}
+                </span>
+              </section>
+              <section className='info-section'>
+                <div className='icon-small'>
+                  <img src='https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/humidity.svg' />
+                </div>
+                Humidity: <span>{weatherData.humidity} %</span>
+              </section>
+              <section className='info-section'>
+                <div className='icon-small'>
+                  <img src='https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/rain.svg' />
+                </div>
+                Rainfall: <span>{weatherData.precip_mm} mm</span>
+              </section>
+              <section className='info-section'>
+                <div className='icon-small'>
+                  <img src='https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/uv-index.svg' />
+                </div>
+                UV index: <span>{weatherData.uv}</span>
+              </section>
+              <section className='info-section'>
+                <div className='icon-small'>
+                  <img src='https://raw.githubusercontent.com/basmilius/weather-icons/87a143a3ca6a50d8e9cbd0f38eb3f31d7cf48053/design/fill/final/pressure-high.svg' />
+                </div>
+                Pressure:
+                <span>{weatherData.pressure_mb} mb</span>
+              </section>
+            </section>
+          </div>
+        </>
       )}
     </div>
   )
